@@ -1,0 +1,16 @@
+{
+    "name": "parcel",
+    "version": "1.0.0",
+    "title": "parcel",
+    "description": "ETL Service",
+    "apidoc": {
+        "title": "parcel",
+        "header": {
+            "title": "Overview",
+            "filename": "header.md"
+        },
+        "footer": {
+            "filename": "footer.md"
+        }
+    }
+}

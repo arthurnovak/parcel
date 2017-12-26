@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Content Spec Schema",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "dataType": {
+            "description": "The type of measurement",
+            "type": "string"
+        },
+        "computeWindowSec": {
+            "description": "Sliding window to compute average measurements",
+            "type": "integer",
+            "minimum": 1
+        },
+        "computePeriodSec": {
+            "description": "Shift period",
+            "type": "integer",
+            "minimum": 1
+        }
+    },
+    "required": [
+        "dataType",
+        "computeWindowSec",
+        "computePeriodSec"
+    ]
+}

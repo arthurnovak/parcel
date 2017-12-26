@@ -1,0 +1,35 @@
+{application, parcel, [
+    {description, "ETL Service"},
+    {vsn, git},
+    {modules, []},
+    {registered, [
+        parcel_sup
+    ]},
+    {applications, [
+        lager,
+        kernel,
+        stdlib,
+        inets,
+        ssl,
+        jiffy,
+        cowboy,
+        erlastic_search
+    ]},
+    {mod, {parcel_app, []}},
+    {env, [
+        %% Period to check content folder for updated content and
+        %% current.version file
+        {content_poll_interval_sec, 30},
+
+        %% Content folder path
+        %% './priv' by default
+        %% {content_path, "/path/content"},
+
+        %% Temp folder for wrapped python content
+        %% '/tmp/parcel' by default
+        {python_path_dir, "/tmp/parcel"},
+
+        %% Elastic Search index
+        {es_index, parcel}
+    ]}
+]}.

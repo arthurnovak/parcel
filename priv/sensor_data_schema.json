@@ -1,0 +1,44 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Sensor Data Spec Schema",
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+        "sensorId": {
+            "description": "Sensor id",
+            "type": "string"
+        },
+        "createdTime": {
+            "description": "Time of the measurement",
+            "type": "string",
+            "format": "date-time"
+        },
+        "dataType": {
+            "description": "The type of measurement",
+            "type": "string"
+        },
+        "dataUnit": {
+            "description": "A description of the data units",
+            "type": "string"
+        },
+        "data": {
+            "description": "Actual data payload",
+            "type": "array",
+            "items": {
+                "type": [
+                    "object",
+                    "integer",
+                    "string"
+                ]
+            },
+            "minItems": 1
+        }
+    },
+    "required": [
+        "sensorId",
+        "dataType",
+        "data",
+        "createdTime",
+        "dataUnit"
+    ]
+}
